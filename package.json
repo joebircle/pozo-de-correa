@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "name": "pozo-de-correa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joebircle/pozo-de-correa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/joebircle/pozo-de-correa/issues"
+  },
+  "homepage": "https://github.com/joebircle/pozo-de-correa#readme"
+}
