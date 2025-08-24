@@ -113,6 +113,30 @@ export default function EstanciaLanding() {
         </div>
       </section>
 
+      <section className="py-24 px-4">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <h2 className="font-serif text-3xl font-light mb-8" style={{ color: "#a08076" }}>
+            Conocé la Estancia
+          </h2>
+          <p className="text-lg mb-8" style={{ color: "#a98b81" }}>
+            Un recorrido por nuestros espacios y la belleza natural que nos rodea
+          </p>
+
+          <div className="relative w-full max-w-3xl mx-auto">
+            <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.youtube.com/embed/-2P2oBAQ6M4"
+                title="Estancia Pozo de Correa - Video"
+                className="w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 px-4 bg-gray-50 relative" style={{ backgroundColor: "#dfd5d1" }}>
         <div className="absolute inset-0" style={{ backgroundColor: "#dfd5d1", opacity: 0.95 }}></div>
         <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10">
@@ -182,7 +206,7 @@ export default function EstanciaLanding() {
               Experiencias de Nuestros Huéspedes
             </h2>
             <p className="text-lg" style={{ color: "#a98b81" }}>
-              Descubre lo que dicen las familias que han vivido momentos únicos en nuestra estancia
+              Te compartimos lo que dicen las familias que nos visitan
             </p>
           </div>
 
