@@ -1,7 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { MessageCircle, MapPin } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { MessageCircle, MapPin, Star } from "lucide-react"
 
 export default function EstanciaLanding() {
   const whatsappNumber = "543512892652"
@@ -11,6 +12,45 @@ export default function EstanciaLanding() {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 
   const googleMapsUrl = "https://maps.app.goo.gl/15UsFN6zT13bPePa8?g_st=com.google.maps.preview.copy"
+
+  const testimonials = [
+    {
+      name: "Soledad Gandara",
+      rating: 5,
+      timeAgo: "hace un mes",
+      text: "Un lugar de ensueño, realmente fascinante. El entorno es precioso, lleno de paz y belleza natural. La Estancia es súper amplia, muy cómoda, confortable, cuenta con ambientes únicos, tuvimos nieve y la calefacción fue increíble! Cada rincón pensado con muchísimo detalle y dedicación. Celebramos mi cumpleaños, rodeados de amigos y familia, fue inolvidable. ¡Gracias Familia Díaz, por brindar la posibilidad de disfrutar de su Estancia!",
+    },
+    {
+      name: "María Milagros Carrazzoni",
+      rating: 5,
+      timeAgo: "hace un mes",
+      text: "Un lugar único, disfrutamos unas vacaciones de invierno en familia inolvidables. Más que recomendado. Alexis quien nos acompañó durante nuestra estadía es excelente. Gracias !!!!",
+    },
+    {
+      name: "Clara Saux",
+      rating: 5,
+      timeAgo: "hace un mes",
+      text: "Una estancia con historia y calor de familia. Super recomendable para desconectar en un lugar en donde cada detalle está cuidado. Los anfitriones muy amables y Alexis predispuesto a ayudar en todo. Gracias por recibirnos! Ya programando la próxima visita ❤️",
+    },
+    {
+      name: "Milagros Seara",
+      rating: 5,
+      timeAgo: "hace 3 semanas",
+      text: "Pasamos unos días increíbles!! La casa es un sueño! Cálida, cómoda, llena de historia!! Los dueños súper atentos a todos los detalles Para que pasemos los mejores días!! Esperamos volver!!",
+    },
+    {
+      name: "Eugenia Putelli",
+      rating: 5,
+      timeAgo: "hace 3 meses",
+      text: "La Estancia es un lugar soñado, todo de primera, la cordialidad y el detalle de los dueños y encargado es impecable. Es ideal para familias muy numerosas o grupos de amigos grandes, como hay tantos ambientes cada uno puede estar en paz y cómodo en cualquier lugar. Dios quiera que podamos volver! Muchas gracias por todo!",
+    },
+    {
+      name: "Pedro Baldi",
+      rating: 5,
+      timeAgo: "hace 9 meses",
+      text: "Increíble casa de campo. El lugar es perfecto para desconectar y pasar unos días rodeados de naturaleza e historia. José, el anfitrión, es un fuera de serie, atento y abierto a dar recomendaciones para que tu estadía sea realmente una experiencia inolvidable. Las instalaciones son realmente bellas, son cómodas y respetan el estilo antiguo de la casa! 100% recomendado!",
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-white">
@@ -130,6 +170,60 @@ export default function EstanciaLanding() {
               Cada espacio, cada detalle, guarda la esencia de quienes lo habitaron, convirtiendo al Casco en un símbolo
               de raíces profundas, tradición y armonía con la naturaleza.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-4 relative" style={{ backgroundColor: "#b9a29a" }}>
+        <div className="absolute inset-0" style={{ backgroundColor: "#b9a29a", opacity: 0.95 }}></div>
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-4xl font-light mb-4" style={{ color: "#a08076" }}>
+              Experiencias de Nuestros Huéspedes
+            </h2>
+            <p className="text-lg" style={{ color: "#a98b81" }}>
+              Descubre lo que dicen las familias que han vivido momentos únicos en nuestra estancia
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="border-none shadow-lg bg-white/95 hover:bg-white transition-colors">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="flex text-amber-400">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-current" />
+                      ))}
+                    </div>
+                    <span className="ml-2 text-sm text-gray-500">{testimonial.timeAgo}</span>
+                  </div>
+
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4 line-clamp-6">"{testimonial.text}"</p>
+
+                  <div className="border-t pt-4">
+                    <p className="font-medium" style={{ color: "#a08076" }}>
+                      {testimonial.name}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-lg mb-6" style={{ color: "#a08076" }}>
+              ¿Listo para crear tu propia experiencia inolvidable?
+            </p>
+            <Button
+              size="lg"
+              className="text-white px-8 py-4 hover:opacity-90"
+              style={{ backgroundColor: "#a08076" }}
+              onClick={() => window.open(whatsappUrl, "_blank")}
+            >
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Reservar Ahora
+            </Button>
           </div>
         </div>
       </section>
