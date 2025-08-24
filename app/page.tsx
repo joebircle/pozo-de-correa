@@ -225,9 +225,11 @@ export default function EstanciaLanding() {
                     <span className="ml-2 text-sm text-gray-500">{testimonial.timeAgo}</span>
                   </div>
 
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4 line-clamp-6">"{testimonial.text}"</p>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4 line-clamp-6 text-justify">
+                    "{testimonial.text}"
+                  </p>
 
-                  <div className="border-t pt-4">
+                  <div className="border-t pt-4 text-center">
                     <p className="font-medium" style={{ color: "#a08076" }}>
                       {testimonial.name}
                     </p>
@@ -309,6 +311,21 @@ export default function EstanciaLanding() {
             <div className="grid sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
               <div>
                 <h4 className="font-serif text-xl mb-4" style={{ color: "#a08076" }}>
+                  Síguenos
+                </h4>
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-sm font-medium hover:underline"
+                  style={{ color: "#a08076" }}
+                  onClick={() => window.open(instagramUrl, "_blank")}
+                >
+                  <Instagram className="mr-2 h-4 w-4" />
+                  @estanciapozodecorrea
+                </Button>
+              </div>
+
+              <div>
+                <h4 className="font-serif text-xl mb-4" style={{ color: "#a08076" }}>
                   Dirección
                 </h4>
                 <div className="space-y-2">
@@ -327,21 +344,6 @@ export default function EstanciaLanding() {
                     Ver en Google Maps
                   </Button>
                 </div>
-              </div>
-
-              <div>
-                <h4 className="font-serif text-xl mb-4" style={{ color: "#a08076" }}>
-                  Síguenos
-                </h4>
-                <Button
-                  variant="link"
-                  className="p-0 h-auto text-sm font-medium hover:underline"
-                  style={{ color: "#a08076" }}
-                  onClick={() => window.open(instagramUrl, "_blank")}
-                >
-                  <Instagram className="mr-2 h-4 w-4" />
-                  @estanciapozodecorrea
-                </Button>
               </div>
 
               <div>

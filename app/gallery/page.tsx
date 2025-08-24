@@ -6,16 +6,52 @@ import { Card, CardContent } from "@/components/ui/card"
 export default function GalleryPage() {
   const galleryImages = [
     {
-      src: "/casa-principal.jpg",
-      alt: "Casa Principal de Estancia Pozo de Correa",
+      src: "/estancia-exterior-personas.jpg",
+      alt: "Vista de la casa principal con huéspedes caminando por el campo",
       category: "Arquitectura",
       title: "Casa Principal",
     },
     {
-      src: "/placeholder-5ndi4.png",
-      alt: "Habitación Carlos Frías con vista a las sierras",
-      category: "Alojamiento",
-      title: "Habitación Carlos Frías",
+      src: "/casa-principal-arboles.jpg",
+      alt: "Fachada de la casa principal rodeada de árboles centenarios",
+      category: "Arquitectura",
+      title: "Fachada Histórica",
+    },
+    {
+      src: "/vista-aerea-estancia.jpg",
+      alt: "Vista aérea de toda la propiedad de 25 hectáreas",
+      category: "Arquitectura",
+      title: "Vista Aérea",
+    },
+    {
+      src: "/casa-flores-rosadas.jpg",
+      alt: "Casa principal con jardines de flores rosadas en primer plano",
+      category: "Naturaleza",
+      title: "Jardines en Flor",
+    },
+    {
+      src: "/comedor-tradicional.jpg",
+      alt: "Comedor tradicional con muebles de época y retratos familiares",
+      category: "Interiores",
+      title: "Comedor Histórico",
+    },
+    {
+      src: "/salon-historico.jpg",
+      alt: "Salón principal con techos abovedados y muebles de época",
+      category: "Interiores",
+      title: "Salón Principal",
+    },
+    {
+      src: "/galeria-columnas.jpg",
+      alt: "Galería con columnas y vista al parque, espacio de descanso",
+      category: "Arquitectura",
+      title: "Galería Colonial",
+    },
+    {
+      src: "/retrato-historico.jpg",
+      alt: "Detalle de retrato histórico familiar con flores frescas",
+      category: "Historia",
+      title: "Herencia Familiar",
     },
     {
       src: "/spacious-bedroom-gallery-garden.png",
@@ -30,40 +66,10 @@ export default function GalleryPage() {
       title: "Suite Familiar",
     },
     {
-      src: "/cordoba-horseback-riding.png",
-      alt: "Cabalgata por las sierras de Córdoba",
-      category: "Actividades",
-      title: "Cabalgatas",
-    },
-    {
-      src: "/jesuit-estancia-santa-catalina.png",
-      alt: "Visita a la histórica Estancia Jesuítica de Santa Catalina",
-      category: "Actividades",
-      title: "Santa Catalina",
-    },
-    {
-      src: "/argentine-gaucho-experience.png",
-      alt: "Experiencia tradicional argentina",
-      category: "Actividades",
-      title: "Experiencia Tradicional",
-    },
-    {
-      src: "/gourmet-estancia-dining.png",
-      alt: "Cena gourmet en el casco histórico",
-      category: "Gastronomía",
-      title: "Cena Gourmet",
-    },
-    {
-      src: "/estancia-gardens-picnic.png",
-      alt: "Picnic en los jardines de la estancia",
-      category: "Gastronomía",
-      title: "Picnic en los Jardines",
-    },
-    {
-      src: "/argentine-empanada-class.png",
-      alt: "Clase de cocina de empanadas tradicionales",
-      category: "Gastronomía",
-      title: "Clases de Cocina",
+      src: "/birdwatching-cordoba-argentina.png",
+      alt: "Observación de aves en Córdoba",
+      category: "Naturaleza",
+      title: "Observación de Aves",
     },
     {
       src: "/photography-tour-estancia-cordoba.png",
@@ -71,18 +77,12 @@ export default function GalleryPage() {
       category: "Actividades",
       title: "Tour Fotográfico",
     },
-    {
-      src: "/birdwatching-cordoba-argentina.png",
-      alt: "Observación de aves en Córdoba",
-      category: "Naturaleza",
-      title: "Observación de Aves",
-    },
   ]
 
-  const categories = ["Todos", "Arquitectura", "Alojamiento", "Actividades", "Gastronomía", "Naturaleza"]
+  const categories = ["Todos", "Arquitectura", "Interiores", "Historia", "Alojamiento", "Actividades", "Naturaleza"]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative py-20 bg-[#a08076] text-white">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -109,9 +109,9 @@ export default function GalleryPage() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
-            <Card key={index} className="group overflow-hidden border-[#a08076]/20 hover:shadow-lg transition-shadow">
+            <Card key={index} className="group overflow-hidden bg-white hover:shadow-md transition-shadow">
               <CardContent className="p-0">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
@@ -127,7 +127,7 @@ export default function GalleryPage() {
                     </span>
                   </div>
                 </div>
-                <div className="p-4">
+                <div className="p-4 bg-white">
                   <h3 className="font-serif text-lg text-[#a08076] mb-2">{image.title}</h3>
                   <p className="text-gray-600 text-sm">{image.alt}</p>
                 </div>
