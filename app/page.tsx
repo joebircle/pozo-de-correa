@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { MessageCircle, MapPin, Star } from "lucide-react"
+import { MessageCircle, MapPin, Star, Instagram } from "lucide-react"
 
 export default function EstanciaLanding() {
   const whatsappNumber = "543512892652"
@@ -12,6 +12,8 @@ export default function EstanciaLanding() {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 
   const googleMapsUrl = "https://maps.app.goo.gl/15UsFN6zT13bPePa8?g_st=com.google.maps.preview.copy"
+  const instagramUrl = "https://www.instagram.com/estanciapozodecorrea?igsh=ZnozdmEzM3EwMzhk&utm_source=qr"
+  const newGoogleMapsUrl = "https://maps.app.goo.gl/uArUtpk8dsfvsS5E7?g_st=com.google.maps.preview.copy"
 
   const testimonials = [
     {
@@ -288,12 +290,82 @@ export default function EstanciaLanding() {
         </div>
       </section>
 
-      <footer className="py-12 px-4" style={{ borderTop: "1px solid #ccbbb5" }}>
-        <div className="max-w-2xl mx-auto text-center">
-          <img src="/logo-estancia.svg" alt="Estancia Pozo de Correa" className="mx-auto max-w-xs w-full h-auto mb-4" />
-          <p className="text-sm" style={{ color: "#a98b81" }}>
-            Córdoba, Argentina
-          </p>
+      <footer className="py-16 px-4" style={{ borderTop: "1px solid #ccbbb5" }}>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center space-y-12">
+            {/* Logo section centered at top */}
+            <div>
+              <img
+                src="/logo-minimalista.jpg"
+                alt="Pozo de Correa"
+                className="mx-auto max-w-[280px] w-full h-auto mb-4"
+              />
+              <p className="text-lg font-light" style={{ color: "#a98b81" }}>
+                Herencia de familia desde 1888
+              </p>
+            </div>
+
+            {/* Contact information below logo */}
+            <div className="grid sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
+              <div>
+                <h4 className="font-serif text-xl mb-4" style={{ color: "#a08076" }}>
+                  Dirección
+                </h4>
+                <div className="space-y-2">
+                  <p className="text-sm leading-relaxed" style={{ color: "#a98b81" }}>
+                    Camino Rural s/n, Agua de las Piedras
+                    <br />
+                    Departamento Totoral, Córdoba, Argentina
+                  </p>
+                  <Button
+                    variant="link"
+                    className="p-0 h-auto text-sm font-medium hover:underline"
+                    style={{ color: "#a08076" }}
+                    onClick={() => window.open(newGoogleMapsUrl, "_blank")}
+                  >
+                    <MapPin className="mr-2 h-4 w-4" />
+                    Ver en Google Maps
+                  </Button>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-serif text-xl mb-4" style={{ color: "#a08076" }}>
+                  Síguenos
+                </h4>
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-sm font-medium hover:underline"
+                  style={{ color: "#a08076" }}
+                  onClick={() => window.open(instagramUrl, "_blank")}
+                >
+                  <Instagram className="mr-2 h-4 w-4" />
+                  @estanciapozodecorrea
+                </Button>
+              </div>
+
+              <div>
+                <h4 className="font-serif text-xl mb-4" style={{ color: "#a08076" }}>
+                  Contacto
+                </h4>
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-sm font-medium hover:underline"
+                  style={{ color: "#a08076" }}
+                  onClick={() => window.open(whatsappUrl, "_blank")}
+                >
+                  <MessageCircle className="mr-2 h-4 w-4" />
+                  WhatsApp: +54 351 289 2652
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center pt-8 border-t mt-12" style={{ borderColor: "#ccbbb5" }}>
+            <p className="text-sm" style={{ color: "#a98b81" }}>
+              © 2024 Estancia Pozo de Correa. Todos los derechos reservados.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
